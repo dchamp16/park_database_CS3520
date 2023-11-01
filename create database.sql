@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS Park (
 CREATE TABLE IF NOT EXISTS Wildlife (
 	wildlifeID MEDIUMINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(20) NOT NULL,
-    species VARCHAR(10),
+    species VARCHAR(20),
     description VARCHAR(500),
     threatenedStatus ENUM('HIGH', 'MEDIUM', 'LOW'),
     population VARCHAR(20) -- 10 million, 0.1 million
@@ -74,12 +74,12 @@ CREATE TABLE IF NOT EXISTS ParkVisitor (
 
 CREATE TABLE IF NOT EXISTS Role (
     roleID INT PRIMARY KEY AUTO_INCREMENT,
-    roleName VARCHAR(50) NOT NULL, -- Park Ranger, Park Superintendent, Maintenance Worker, Visitor Services Assistant, Search and Rescue Specialist, etc.
+    name VARCHAR(50) NOT NULL,
     description VARCHAR(500)
 );
 
 CREATE TABLE IF NOT EXISTS Staff (
-	visitorID INT PRIMARY KEY AUTO_INCREMENT,
+	staffID INT PRIMARY KEY AUTO_INCREMENT,
     firstName VARCHAR(20) NOT NULL,
     lastName VARCHAR(20),
     phone VARCHAR(15) NOT NULL,

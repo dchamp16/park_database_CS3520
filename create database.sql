@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS Event (
     date DATETIME NOT NULL,
     description VARCHAR(500),
     MaxParticipants SMALLINT UNSIGNED NOT NULL,
+    location VARCHAR(100) NOT NULL,
     parkID SMALLINT,
     FOREIGN KEY (parkID) REFERENCES Park(parkID)
 );
@@ -85,7 +86,9 @@ CREATE TABLE IF NOT EXISTS Staff (
     phone VARCHAR(15) NOT NULL,
     email VARCHAR(30) NOT NULL,
     roleID INT,
-    FOREIGN KEY (roleID) REFERENCES Role(roleID)
+    FOREIGN KEY (roleID) REFERENCES Role(roleID),
+    parkID SMALLINT,
+    FOREIGN KEY (parkID) REFERENCES Park(parkID)
 );
 
 CREATE TABLE IF NOT EXISTS Facility (
